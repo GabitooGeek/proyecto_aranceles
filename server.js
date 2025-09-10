@@ -1,0 +1,16 @@
+const express = require('express');
+const cors = require('cors');
+const data = require('./db.json');
+const app = express();
+const PORT = 8888;
+app.use(cors());
+app.use(express.json());
+app.use((req, res, next) => { res.setHeader('Cache-Control', 'no-store'); next(); });
+app.get('/api/clasificacion', (req, res) => { const query = req.query.q ? req.query.q.toLowerCase() : ''; if (!query) return res.json(data.productos); const results = data.productos.filter(p => p.codigo.toLowerCase().includes(query) || p.descripcion.toLowerCase().includes(query)); res.json(results); });
+app.get('/api/arancel-tipos', (req, res) => { const query = req.query.q ? req.query.q.toLowerCase() : ''; if (!query) return res.json(data.arancelTipos); const results = data.arancelTipos.filter(t => t.tipo.toLowerCase().includes(query) || t.descripcion.toLowerCase().includes(query) || t.uso.toLowerCase().includes(query)); res.json(results); });
+app.get('/api/sector-ejemplos', (req, res) => { res.json(data.sectorEjemplos); });
+app.get('/api/tratados', (req, res) => { const query = req.query.q ? req.query.q.toLowerCase() : ''; if (!query) { return res.json(data.tratados); } const results = data.tratados.filter(t => t.nombre.toLowerCase().includes(query) || t.paises.toLowerCase().includes(query)); res.json(results); });
+app.get('/api/dashboard-summary', (req, res) => { const summaryData = { summary: { tiposArancel: data.arancelTipos.length, sectoresEjemplo: data.sectorEjemplos.length, rangoLegal: "0% - 40%", tlcRegistrados: data.tratados.length }, distribucionTipos: { labels: data.arancelTipos.map(t => t.tipo.replace('Arancel ', '')), data: [1, 1, 1] }, rangoLegalChart: { max: 40 }, accesosRapidos: [{ texto: "Consulta Arancelaria DIAN", url: "https://muisca.dian.gov.co/WebArancel/DefConsultaEstructuraArancelaria.faces" }, { texto: "Guía MinCIT – Importar a Colombia", url: "https://vuce.gov.co/vuce/servicios-al-ciudadano/abc-del-exportador-e-importador" }, { texto: "Arancel – Legis", url: "https://www.legiscomex.com/soluciones/arancel-electronico" }] }; res.json(summaryData); });
+app.get('/api/noticias', (req, res) => { const sortedNoticias = data.noticias.sort((a, b) => new Date(b.fecha) - new Date(a.fecha)); res.json(sortedNoticias); });
+app.post('/api/noticias', (req, res) => { const newAlert = { id: Date.now(), fecha: req.body.fecha, titulo: req.body.titulo, detalle: req.body.detalle, fuente: req.body.fuente, url: req.body.url }; data.noticias.push(newAlert); res.status(201).json(newAlert); });
+app.listen(PORT, () => { console.log(`Servidor principal corriendo en http://localhost:${PORT}`); });

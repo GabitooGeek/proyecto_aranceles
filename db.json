@@ -1,0 +1,109 @@
+{
+    "productos": [
+        {
+            "codigo": "2203.00.00.00",
+            "descripcion": "Cerveza de malta",
+            "unidad": "L",
+            "tipo": "específico",
+            "ad_valorem": "–",
+            "especifica": "0.35 USD/L"
+        },
+        {
+            "codigo": "8703.23.90.00",
+            "descripcion": "Vehículos turismos, cilindrada 1500-3000cc, otros",
+            "unidad": "Unidad",
+            "tipo": "ad valorem",
+            "ad_valorem": "25.00%",
+            "especifica": "–"
+        },
+        {
+            "codigo": "3303.00.00.00",
+            "descripcion": "Perfumes y aguas de tocador",
+            "unidad": "kg",
+            "tipo": "mixto",
+            "ad_valorem": "5.00%",
+            "especifica": "2 USD/kg"
+        }
+    ],
+    "arancelTipos": [
+        {
+            "tipo": "Arancel Ad Valorem",
+            "descripcion": "Tarifa expresada como porcentaje sobre el valor comercial (CIF) del producto importado.",
+            "base_calculo": "% sobre valor CIF (Costo + Seguro + Flete)",
+            "ejemplo": "10% sobre CIF de 10.000 USD => 1.000 USD",
+            "uso": "Más común; mayoría de productos"
+        },
+        {
+            "tipo": "Arancel Específico",
+            "descripcion": "Tarifa fija por unidad física (peso, volumen, cantidad).",
+            "base_calculo": "Monto fijo por unidad física",
+            "ejemplo": "5 USD por unidad; 100 und => 500 USD",
+            "uso": "Frecuente en agro, combustibles, algunos textiles"
+        },
+        {
+            "tipo": "Arancel Mixto",
+            "descripcion": "Combinación de ad valorem + específico por unidad.",
+            "base_calculo": "% sobre CIF + monto fijo por unidad",
+            "ejemplo": "5% CIF (10.000 => 500) + 2 USD x 100 und => 200; total 700 USD",
+            "uso": "Menos frecuente; productos sensibles"
+        }
+    ],
+    "sectorEjemplos": [
+        {
+            "sector": "Agropecuario",
+            "productos": "Arroz, Leche, Maíz blanco, Carne de res, Azúcar",
+            "nota": "Pueden tener tarifas específicas o franjas arancelarias"
+        },
+        {
+            "sector": "Automotriz",
+            "productos": "Vehículos, Partes y repuestos",
+            "nota": "Aranceles variables ~5%-35% según subpartida"
+        },
+        {
+            "sector": "Bebidas alcohólicas",
+            "productos": "Cerveza, Fermentados",
+            "nota": "Aranceles específicos por litro o ad valorem por graduación"
+        },
+        {
+            "sector": "Perfumería y cosméticos",
+            "productos": "Perfumes, Cosméticos",
+            "nota": "Tarifa por kg o ad valorem, según clasificación"
+        }
+    ],
+    "tratados": [
+        {
+            "nombre": "Comunidad Andina (CAN)",
+            "paises": "Bolivia, Colombia, Ecuador, Perú",
+            "beneficio": "Preferencias arancelarias según reglas de origen",
+            "nota": "Aplica según reglas de origen y subpartida."
+        },
+        {
+            "nombre": "Alianza del Pacífico",
+            "paises": "Chile, Colombia, México, Perú",
+            "beneficio": "Desgravación progresiva para múltiples subpartidas",
+            "nota": "Aplica según reglas de origen y subpartida."
+        },
+        {
+            "nombre": "Estados Unidos (TLC)",
+            "paises": "Colombia, Estados Unidos",
+            "beneficio": "Reducciones/eliminaciones por capítulo con origen calificado",
+            "nota": "Aplica según reglas de origen y subpartida."
+        },
+        {
+            "nombre": "Unión Europea (Acuerdo)",
+            "paises": "Colombia, UE",
+            "beneficio": "Preferencias por sectores (agro, industria)",
+            "nota": "Aplica según reglas de origen y subpartida."
+        }
+    ],
+    "noticias": [
+        {
+            "id": 1,
+            "fecha": "2025-01-13",
+            "titulo": "Circular DIAN sobre procedimientos aduaneros",
+            "detalle": "Actualiza pautas operativas; revisar impactos en liquidación y control documental.",
+            "fuente": "DIAN",
+            "url": "https://muisca.dian.gov.co/WebArancel/DefConsultaEstructuraArancelaria.faces"
+        }
+    ]
+}

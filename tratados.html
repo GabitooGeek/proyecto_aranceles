@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tratados</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">$</div>
+                <div class="title">
+                    <h1>Aranceles – Gestión Aduanera</h1>
+                    <p>Colombia - Módulo especializado</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><span class="material-symbols-outlined">dashboard</span> Dashboard</a>
+                    </li>
+                    <li><a href="tipos-arancel.html"><span class="material-symbols-outlined">description</span> Tipos de
+                            Arancel</a></li>
+                    <li><a href="clasificacion.html"><span class="material-symbols-outlined">search_check</span>
+                            Clasificación</a></li>
+                    <li><a href="simulador.html"><span class="material-symbols-outlined">calculate</span> Simulador</a>
+                    </li>
+                    <li class="active"><a href="tratados.html"><span class="material-symbols-outlined">handshake</span>
+                            Tratados y exenciones</a></li>
+                    <li><a href="noticias.html"><span class="material-symbols-outlined">notifications</span> Noticias y
+                            alertas</a></li>
+                    <li><a href="recursos.html"><span class="material-symbols-outlined">book</span> Recursos</a></li>
+                </ul>
+            </nav>
+            <footer class="sidebar-footer">
+                <p>&copy; 2025 Módulo Aranceles. Esta es una base técnica de referencia...</p>
+            </footer>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <p>Basado en lineamientos del documento interno de aranceles</p>
+            </header>
+            <div class="main-padding">
+                <div class="search-bar"><span class="material-symbols-outlined">search</span><input type="text"
+                        id="treatySearchInput" placeholder="Buscar tratado o país..."></div>
+                <div class="treaties-grid" id="treaties-grid"></div>
+            </div>
+        </main>
+    </div>
+    <script src="js/tratados.js"></script>
+</body>
+
+</html>

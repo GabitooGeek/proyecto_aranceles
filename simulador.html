@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">$</div>
+                <div class="title">
+                    <h1>Aranceles – Gestión Aduanera</h1>
+                    <p>Colombia - Módulo especializado</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><span class="material-symbols-outlined">dashboard</span> Dashboard</a>
+                    </li>
+                    <li><a href="tipos-arancel.html"><span class="material-symbols-outlined">description</span> Tipos de
+                            Arancel</a></li>
+                    <li><a href="clasificacion.html"><span class="material-symbols-outlined">search_check</span>
+                            Clasificación</a></li>
+                    <li class="active"><a href="simulador.html"><span class="material-symbols-outlined">calculate</span>
+                            Simulador</a></li>
+                    <li><a href="tratados.html"><span class="material-symbols-outlined">handshake</span> Tratados y
+                            exenciones</a></li>
+                    <li><a href="noticias.html"><span class="material-symbols-outlined">notifications</span> Noticias y
+                            alertas</a></li>
+                    <li><a href="recursos.html"><span class="material-symbols-outlined">book</span> Recursos</a></li>
+                </ul>
+            </nav>
+            <footer class="sidebar-footer">
+                <p>&copy; 2025 Módulo Aranceles. Esta es una base técnica de referencia...</p>
+            </footer>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <p>Basado en lineamientos del documento interno de aranceles</p>
+            </header>
+            <div class="main-padding">
+                <div class="simulator-container">
+                    <section class="parameters-card section-card">
+                        <h2><span class="material-symbols-outlined">tune</span> Parámetros</h2>
+                        <form id="tariff-form">
+                            <div class="form-grid">
+                                <div class="form-group"><label for="tariff-type">Tipo de arancel</label><select
+                                        id="tariff-type">
+                                        <option value="ad-valorem">Ad Valorem</option>
+                                        <option value="specific">Específico</option>
+                                        <option value="mixed">Mixto</option>
+                                    </select></div>
+                                <div class="form-group"><label for="cif-value">Valor CIF (USD)</label><input
+                                        type="number" id="cif-value" value="10000"></div>
+                                <div class="form-group"><label for="physical-units">Unidades físicas</label><input
+                                        type="number" id="physical-units" value="100"></div>
+                                <div class="form-group"><label for="ad-valorem-rate">Tasa ad valorem (%)</label><input
+                                        type="number" id="ad-valorem-rate" value="10"></div>
+                                <div class="form-group"><label for="specific-rate">Tasa específica (USD /
+                                        unidad)</label><input type="number" id="specific-rate" value="2"></div>
+                                <div class="form-group"><label for="fta-reduction">Reducción por TLC (%)</label><input
+                                        type="number" id="fta-reduction" value="0" min="0" max="100"><small>Ej: 100 =
+                                        exención total; 0 = sin preferencia</small></div>
+                            </div>
+                        </form>
+                    </section>
+                    <aside class="results-card section-card">
+                        <h2>Resultado</h2>
+                        <div class="result-item"><span>Base calculada</span><span id="result-base">$1,000.00</span>
+                        </div>
+                        <div class="result-item"><span>Descuento TLC</span><span id="result-discount">$0.00</span></div>
+                        <div class="result-item total"><strong>Total a pagar</strong><strong
+                                id="result-total">$1,000.00</strong></div><button id="export-btn"><span
+                                class="material-symbols-outlined">download</span> Exportar TXT</button>
+                    </aside>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/simulator.js"></script>
+</body>
+
+</html>

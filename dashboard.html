@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">$</div>
+                <div class="title">
+                    <h1>Aranceles – Gestión Aduanera</h1>
+                    <p>Colombia - Módulo especializado</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="dashboard.html"><span class="material-symbols-outlined">dashboard</span>
+                            Dashboard</a></li>
+                    <li><a href="tipos-arancel.html"><span class="material-symbols-outlined">description</span> Tipos de
+                            Arancel</a></li>
+                    <li><a href="clasificacion.html"><span class="material-symbols-outlined">search_check</span>
+                            Clasificación</a></li>
+                    <li><a href="simulador.html"><span class="material-symbols-outlined">calculate</span> Simulador</a>
+                    </li>
+                    <li><a href="tratados.html"><span class="material-symbols-outlined">handshake</span> Tratados y
+                            exenciones</a></li>
+                    <li><a href="noticias.html"><span class="material-symbols-outlined">notifications</span> Noticias y
+                            alertas</a></li>
+                    <li><a href="recursos.html"><span class="material-symbols-outlined">book</span> Recursos</a></li>
+                </ul>
+            </nav>
+            <footer class="sidebar-footer">
+                <p>&copy; 2025 Módulo Aranceles. Esta es una base técnica de referencia...</p>
+            </footer>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <p>Basado en lineamientos del documento interno de aranceles</p>
+            </header>
+            <div class="main-padding">
+                <div class="content-grid">
+                    <section class="section-card summary-card">
+                        <h2>Resumen</h2>
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <h3>Tipos de arancel</h3>
+                                <p id="summaryTiposArancel">-</p>
+                            </div>
+                            <div class="summary-item">
+                                <h3>Sectores ejemplo</h3>
+                                <p id="summarySectoresEjemplo">-</p>
+                            </div>
+                            <div class="summary-item">
+                                <h3>Rango legal</h3>
+                                <p id="summaryRangoLegal">-</p>
+                            </div>
+                            <div class="summary-item">
+                                <h3>TLC Registrados</h3>
+                                <p id="summaryTlcRegistrados">-</p>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="charts-grid">
+                        <div class="chart-container">
+                            <h3>Distribución de tipos (ilustrativa)</h3>
+                            <div class="canvas-wrapper"><canvas id="pieChart"></canvas></div>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Rango legal (0–40% ad valorem)</h3>
+                            <div class="canvas-wrapper"><canvas id="barChart"></canvas></div>
+                        </div>
+                    </div>
+                    <aside class="section-card quick-access-card">
+                        <h2>Accesos rápidos</h2>
+                        <ul id="quickLinksList"></ul>
+                    </aside>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

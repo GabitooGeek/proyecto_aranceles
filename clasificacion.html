@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clasificación</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">$</div>
+                <div class="title">
+                    <h1>Aranceles – Gestión Aduanera</h1>
+                    <p>Colombia - Módulo especializado</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><span class="material-symbols-outlined">dashboard</span> Dashboard</a>
+                    </li>
+                    <li><a href="tipos-arancel.html"><span class="material-symbols-outlined">description</span> Tipos de
+                            Arancel</a></li>
+                    <li class="active"><a href="clasificacion.html"><span
+                                class="material-symbols-outlined">search_check</span> Clasificación</a></li>
+                    <li><a href="simulador.html"><span class="material-symbols-outlined">calculate</span> Simulador</a>
+                    </li>
+                    <li><a href="tratados.html"><span class="material-symbols-outlined">handshake</span> Tratados y
+                            exenciones</a></li>
+                    <li><a href="noticias.html"><span class="material-symbols-outlined">notifications</span> Noticias y
+                            alertas</a></li>
+                    <li><a href="recursos.html"><span class="material-symbols-outlined">book</span> Recursos</a></li>
+                </ul>
+            </nav>
+            <footer class="sidebar-footer">
+                <p>&copy; 2025 Módulo Aranceles. Esta es una base técnica de referencia...</p>
+            </footer>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <p>Basado en lineamientos del documento interno de aranceles</p>
+            </header>
+            <div class="main-padding">
+                <section class="section-card">
+                    <h2><span class="material-symbols-outlined">segment</span> Cómo se estructura el código</h2>
+                    <div class="info-grid">
+                        <div class="info-item"><span class="info-tag">Sistema Armonizado (SA)</span>
+                            <p>Base internacional (OMA), 6 dígitos</p>
+                        </div>
+                        <div class="info-item"><span class="info-tag">NANDINA (Com. Andina)</span>
+                            <p>Dígitos 7-8</p>
+                        </div>
+                        <div class="info-item"><span class="info-tag">Arancel Colombiano</span>
+                            <p>Dígitos 9-10 (nacionales)</p>
+                        </div>
+                        <div class="info-item"><span class="info-tag">Importancia</span>
+                            <p>La correcta clasificación determina el arancel y evita sanciones.</p>
+                        </div>
+                    </div><a href="https://muisca.dian.gov.co/WebArancel/DefConsultaEstructuraArancelaria.faces"
+                        target="_blank" class="official-link">Consulta oficial: DIAN – Web Arancel <span
+                            class="material-symbols-outlined" style="font-size: 1em;">open_in_new</span></a>
+                </section>
+                <section class="section-card">
+                    <h2>Buscador (dataset de ejemplo)</h2>
+                    <div class="search-bar" style="margin-bottom: 20px;"><span
+                            class="material-symbols-outlined">search</span><input type="text"
+                            id="classificationSearchInput" placeholder="Código (ej. 2203) o descripción (ej. cerveza)">
+                    </div>
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Descripción</th>
+                                <th>Unidad</th>
+                                <th>Tipo</th>
+                                <th>Tarifa Ad Valorem</th>
+                                <th>Tarifa Específica</th>
+                            </tr>
+                        </thead>
+                        <tbody id="classificationTableBody"></tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="js/clasificacion-search.js"></script>
+</body>
+
+</html>
